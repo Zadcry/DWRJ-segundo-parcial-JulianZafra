@@ -1,9 +1,9 @@
 # Parcial Segundo Corte Desarrollo Web 🚀
 
 
-Nombre completo estudiante :
+Nombre completo estudiante : Julian Mauricio Zafra Moreno
 
-Codigo :
+Codigo : 276076
 
 **Descripción del Problema:**
 
