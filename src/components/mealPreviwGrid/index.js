@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './index.css';
 
 
-const MealPreviwGrid = () => {
+const MealPreviwGrid = ({ searchTerm }) => {
 	const [meals, setMeals] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const navigate = useNavigate();
@@ -33,9 +33,17 @@ const MealPreviwGrid = () => {
 	
 	if (loading) {return <div>Loading...</div>; }
 
+	let filteredMeals = meals;
+
+	if (searchTerm) {
+	filteredMeals = meals.filter((meal) =>
+		meal.strMeal.toLowerCase().startsWith(searchTerm.toLowerCase())
+	);
+	}
+
 	return (
 		<div className='meal-grid'>
-			{meals.map((meal) => (
+			{filteredMeals.map((meal) => (
 				<div onClick={() => handleClick(meal.idMeal)}>
 					<MealPreviw meal={meal} />
 				</div>
